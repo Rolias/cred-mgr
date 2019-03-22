@@ -1,0 +1,10 @@
+node_modules
+*.log
+.environment
+_local/
+.nyc_output
+!.eslintrc
+!.travis.yml
+!.gitignore
+!jsconfig.jsconfig
+!jsdoc.config.json

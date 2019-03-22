@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "opts": {
+    "destination": "./documentation",
+    "recurse": true,
+    "verbose": true
+  }
+}

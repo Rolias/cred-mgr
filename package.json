@@ -1,0 +1,49 @@
+{
+  "name": "basic-starter-kit",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">10.0.0"
+  },
+  "description": "A basic project for running some node.js code with tests",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Rolias/basic-starter-kit.git"
+  },
+  "scripts": {
+    "prestart": "node ./buildScripts/startMessage.js",
+    "start": "run-s start:src",
+    "build": "run-p security-check start:src lint:watch test:watch",
+    "start:src": "node src/main.js",
+    "start:loop": "nodemon src/main.js",
+    "security-check": "npm audit",
+    "lint": "esw src src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --use_strict  main.test.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch --reporter min ",
+    "test:cov": "nyc mocha main.test.js \"src/**/*.test.js\"",
+    "watch": "run-p lint:watch test:watch",
+    "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.config.json src/**/*.js ./ReadMe.md"
+  },
+  "keywords": [
+    "starter-kit"
+  ],
+  "author": "Tod Gentille",
+  "license": "MIT",
+  "dependencies": {
+    "winston": "x"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "chai": "x",
+    "eslint": "x",
+    "eslint-watch": "x",
+    "jsdoc": "^3.5.5",
+    "mocha": "x",
+    "nodemon": "^1.18.10",
+    "npm-run-all": "x",
+    "nyc": "x",
+    "sinon": "x"
+  }
+}
